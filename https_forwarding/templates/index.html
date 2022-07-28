@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.submit_form {
+  margin: 0;
+}
+
+.div-inline input {
+  display: inline;
+  width: calc(100% - 122px);
+  float: left;
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+/* Style the submit button */
+.div-inline button {
+  display: inline;
+  width: 100px;
+  height: 25px;
+  float:right;
+  padding: 0px 2px 0px 2px;
+  background-color: dodgerblue;
+  border: 1px solid #ddd;
+  color: white;
+}
+
+.parent {
+  width: 100%;
+  display: block;
+}
+
+.webpage {
+  float: right;
+  width: calc(60%);
+  height: 600px;
+  margin: 0;
+  background: grey;
+}
+
+.webpage_object {
+  width: calc(100%);
+  height: 600px;
+  margin: 0;
+}
+
+.instruction {
+  float: left;
+  width: calc(40%);
+  height: 600px;
+  margin: 0;
+}
+
+#startbutton {
+  width: 100%;
+  height: 50px;
+  padding: 0px 2px 0px 2px;
+  background-color: dodgerblue;
+  border: 1px solid #ddd;
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  
+}
+
+.start {
+  position: absolute;
+  top: 98px;
+  bottom: 75px;
+  width: 100%;
+  background: grey;
+  align-con
+}
+
+.image {
+  display: block;
+  width: calc(80%);
+  height: calc(100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+</style>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+<script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+<script>
+  function post_user_report(){
+    if(document.getElementById("step_no").innerText == "Finished--thank you! Click on finish button to complete."){
+      return;
+    }
+    var my_assignmentId = document.getElementById('assignmentId').value;
+    var report = document.getElementById("reported_issue_box").value;
+    if(report.length == 0) {
+	window.alert("You are submitting an empty report! Please report your observation");
+	return;
+    }
+    var data = {}
+    data["assignmentId"] = my_assignmentId;
+    data["report"] = report;
+    var url = "https://URL here/submituserreport";
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+    xhr.send(JSON.stringify(data));
+    xhr.onloadend = function() {
+      if(document.getElementById("step_no").innerText == "Exercise: 1 of 6"){
+	document.getElementById("reported_issue_box").value = "";
+	document.getElementById("instruction_display").innerHTML = '<embed src="/pdf2" width="100%" height="600px"/>';
+        document.getElementById("step_no").innerHTML = "Exercise: 2 of 6";
+        var body = JSON.parse(xhr.response);
+	document.getElementById("action_box").innerHTML = "Action: Enter username ("+body.username+") and password ("+body.password+") on the right hand side of the screen, and then click on the login button; report any issues you observe";
+      }
+      else if(document.getElementById("step_no").innerText == "Exercise: 2 of 6"){
+	document.getElementById("reported_issue_box").value = "";
+	document.getElementById("instruction_display").innerHTML = '<embed src="/pdf3" width="100%" height="600px"/>';
+        document.getElementById("step_no").innerHTML = "Exercise: 3 of 6";
+        document.getElementById("action_box").innerHTML = "Action: Click on any subreddit from the available subreddits bar towards the top of the page; report any issues you observe";
+      }
+      else if(document.getElementById("step_no").innerText == "Exercise: 3 of 6"){
+	document.getElementById("reported_issue_box").value = "";
+	document.getElementById("instruction_display").innerHTML = '<embed src="/pdf4" width="100%" height="600px"/>';
+        document.getElementById("step_no").innerHTML = "Exercise: 4 of 6";
+        document.getElementById("action_box").innerHTML = "Action: Click on any post; report any issues you observe";
+      }     
+      else if(document.getElementById("step_no").innerText == "Exercise: 4 of 6"){
+	document.getElementById("reported_issue_box").value = "";
+	document.getElementById("reportButton").onclick = block_button;
+	document.getElementById("instruction_display").innerHTML = '<embed src="/pdf5" width="100%" height="600px"/>';
+        document.getElementById("step_no").innerHTML = "Exercise: 5 of 6";
+	document.getElementById("webpagecontainer").innerHTML = '<object class="webpage_object" type="text/html" data="URL Here" onload="enable_button()" onerror="enable_button()"/>'
+        document.getElementById("action_box").innerHTML = "Action: Click on any post, and then add a comment at the bottom (by filling out the input form and clicking submit); report any issues you observe";
+      }
+      else if(document.getElementById("step_no").innerText == "Exercise: 5 of 6"){
+	document.getElementById("reported_issue_box").value = "";
+        document.getElementById("reportButton").onclick = block_button;
+	document.getElementById("instruction_display").innerHTML = '<embed src="/pdf6" width="100%" height="600px"/>';
+	document.getElementById("webpagecontainer").innerHTML = '<object class="webpage_object" type="text/html" data="URL Here" onload="enable_button()" onerror="enable_button()"/>'
+        document.getElementById("step_no").innerHTML = "Exercise: 6 of 6";
+        document.getElementById("action_box").innerHTML = "Action: Click on any user profile link; report any issues you observe";
+      }
+      else if(document.getElementById("step_no").innerText == "Exercise: 6 of 6"){
+        document.getElementById("step_no").innerHTML = "Finished--thank you! Click on finish button to complete.";
+        document.getElementById("action_box").innerHTML = "Note that payment is subject to results from a screening verification of reported issues";
+	document.getElementById("reportButton").innerHTML='Finish';
+	document.getElementById("reportButton").type = "Submit";
+
+      }
+    }
+  }
+
+ //else if(document.getElementById("step_no").innerText == "Step: 4 of 7"){
+      //  document.getElementById("step_no").innerHTML = "Step: 5 of 7";
+      //  document.getElementById("action_box").innerHTML = "Action: Click on the Upvote or Downvote arrow for your post and check to see that the vote count has changed correctly; report any issues you observe";
+      //}
+//else if(document.getElementById("step_no").innerText == "Step: 7 of 8"){
+      //  document.getElementById("step_no").innerHTML = "Step: 8 of 8";
+      //  document.getElementById("action_box").innerHTML = "Action: Click on the 'Submit a new text post' button on the right hand side of the screen, fill out the form, and click on the Submit button.Then click on your username profile at the top right of the screen and verify that your post is listed; report any issues you observe";
+     // }
+  function load_experiment() {
+    document.getElementById("header1").style.display = "none";
+    document.getElementById("header2").style.display = "none";
+    document.getElementById("header3").style.display = "none";
+    document.getElementById("header4").style.display = "none";
+    document.getElementById("start_div").style.display = "none";
+    document.getElementById("startbutton").style.display = "none";
+    document.getElementById("mturk_form").style.display = "block";
+    document.getElementById("instruction-webpage").innerHTML = '<div class="instruction" id="instruction_display"><embed src="/pdf" width="100%" height="600px"/></div><div class="webpage" id="webpagecontainer"><object style="float: left"  class="webpage_object" type="text/html" data="URL Here" onload="enable_button()" onerror="enable_button()"/></div>';
+  }
+
+  function enable_button() {
+    document.getElementById('reportButton').onclick = post_user_report;
+    window.alert("There won't be anymore elements loading for this exercise, so take your time and submit your issue.");
+  }
+
+  function block_button() {
+    window.alert("Our hamsters are currently at work! You can submit shortly :-)")
+  }
+</script>
+</head>
+<body>
+<form class='submit_form' name='mturk_form' method='post' id='mturk_form' action='https://workersandbox.mturk.com/mturk/externalSubmit' style="display: none">
+<input type='hidden' value='' name='assignmentId' id='assignmentId'/>
+<h3 class='submit_form' id="step_no">Exercise: 1 of 6</h3>
+<h3 class='submit_form' id="action_box">Action: Report any issues (functionality, appearance or speed), if any, for the load of Reddit's home page</h3>
+<div class="div-inline">
+  <!-- <input type='text' id="urlbox" name='entered_URL' placeholder='Type in the URL here...'> -->
+  <!-- <button id='browserButton' onclick="load_reddit_page()" type="button">Load</button> -->
+  <input type='text' id='reported_issue_box' name='reported_issue' placeholder='Type in any issues here...'/>
+  <button id='reportButton' onclick="block_button()" type="button">Submit</button>
+</div>
+</form>
+<div class="parent" id="instruction-webpage">
+<h3 class="submit_form" id="header1">Welcome!</h3>
+<h3 class="submit_form" id="header2">This task consists of 6 exercises. Below is an example of the screen for each exercise.</h3>
+<h3 class="submit_form" id="header3">Report any issues you observe (functionality, appearance, or speed) using the guidelines and click on Submit button to go to next exercise.</h3>
+<h3 class="submit_form" id="header4">PLEASE NOTE: PAYMENT DUE ONLY UPON COMPLETING ALL 6 EXERCISES WITH VALID REPORTS. SUBMIT REPORTS ONLY IN WRITTEN ENGLISH. </h3>
+<div class="start" id="start_div">
+<img src="/start_pic"/ class="image">
+</div>
+<button type="button" id="startbutton" onclick="load_experiment()">Start Experiment</button>
+</div>
+<script language='Javascript'>turkSetAssignmentID();</script>
+</body></html>
+<!-- YOUR HTML ENDS -->

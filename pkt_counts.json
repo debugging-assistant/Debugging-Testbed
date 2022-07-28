@@ -1,0 +1,5400 @@
+{
+  "header_types" : [
+    {
+      "name" : "scalars_0",
+      "id" : 0,
+      "fields" : [
+        ["nextHop_0", 32, false],
+        ["tmp_21", 32, false],
+        ["tmp_22", 32, false],
+        ["tmp_23", 32, false],
+        ["tmp_24", 32, false],
+        ["tmp_25", 32, false],
+        ["tmp_26", 32, false],
+        ["tmp_27", 32, false],
+        ["tmp_28", 32, false],
+        ["tmp_29", 32, false],
+        ["existingKey_f0_0", 32, false],
+        ["existingKey_f1_0", 32, false],
+        ["existingKey_f2_0", 32, false],
+        ["existingKey_f3_0", 32, false],
+        ["existingKey_f4_0", 32, false],
+        ["existingValue_f0_0", 32, false],
+        ["hash_table_index_0", 32, false],
+        ["ix_0", 32, false],
+        ["tmp", 1, false],
+        ["tmp_0", 1, false],
+        ["tmp_1", 1, false],
+        ["tmp_2", 1, false],
+        ["tmp_3", 1, false],
+        ["tmp_4", 1, false],
+        ["tmp_5", 1, false],
+        ["tmp_6", 1, false],
+        ["tmp_7", 1, false],
+        ["tmp_8", 1, false],
+        ["tmp_9", 32, false],
+        ["tmp_10", 32, false],
+        ["tmp_11", 32, false],
+        ["tmp_12", 32, false],
+        ["tmp_13", 32, false],
+        ["tmp_14", 32, false],
+        ["tmp_15", 32, false],
+        ["tmp_16", 1, false],
+        ["tmp_17", 32, false],
+        ["tmp_18", 32, false],
+        ["tmp_19", 32, false],
+        ["tmp_20", 32, false],
+        ["Metadata._query_meta_counter0", 32, false],
+        ["Metadata._query_meta__result_valid1", 1, false],
+        ["Metadata._common_meta_switchId2", 32, false],
+        ["Metadata._common_meta_payload_length3", 32, false],
+        ["Metadata._common_meta_egress_timestamp4", 32, false],
+        ["Metadata._common_meta_pktpath5", 32, false],
+        ["Metadata._common_meta_srcport6", 32, false],
+        ["Metadata._common_meta_dstport7", 32, false],
+        ["Metadata._intrinsic_metadata_ingress_global_timestamp8", 48, false],
+        ["Metadata._intrinsic_metadata_lf_field_list9", 8, false],
+        ["Metadata._intrinsic_metadata_mcast_grp10", 16, false],
+        ["Metadata._intrinsic_metadata_egress_rid11", 16, false],
+        ["Metadata._intrinsic_metadata_resubmit_flag12", 8, false],
+        ["Metadata._intrinsic_metadata_recirculate_flag13", 8, false],
+        ["Metadata._queueing_metadata_enq_timestamp14", 48, false],
+        ["Metadata._queueing_metadata_enq_qdepth15", 16, false],
+        ["Metadata._queueing_metadata_deq_timedelta16", 32, false],
+        ["Metadata._queueing_metadata_deq_qdepth17", 16, false],
+        ["_padding_0", 4, false]
+      ]
+    },
+    {
+      "name" : "Key_result",
+      "id" : 1,
+      "fields" : [
+        ["f0", 32, false],
+        ["f1", 32, false],
+        ["f2", 32, false],
+        ["f3", 32, false],
+        ["f4", 32, false]
+      ]
+    },
+    {
+      "name" : "Value_result",
+      "id" : 2,
+      "fields" : [
+        ["f0", 32, false]
+      ]
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 3,
+      "fields" : [
+        ["ingress_port", 9, false],
+        ["egress_spec", 9, false],
+        ["egress_port", 9, false],
+        ["clone_spec", 32, false],
+        ["instance_type", 32, false],
+        ["drop", 1, false],
+        ["recirculate_port", 16, false],
+        ["packet_length", 32, false],
+        ["enq_timestamp", 32, false],
+        ["enq_qdepth", 19, false],
+        ["deq_timedelta", 32, false],
+        ["deq_qdepth", 19, false],
+        ["ingress_global_timestamp", 48, false],
+        ["egress_global_timestamp", 48, false],
+        ["lf_field_list", 32, false],
+        ["mcast_grp", 16, false],
+        ["resubmit_flag", 32, false],
+        ["egress_rid", 16, false],
+        ["recirculate_flag", 32, false],
+        ["checksum_error", 1, false],
+        ["parser_error", 32, false],
+        ["priority", 3, false],
+        ["_padding", 2, false]
+      ]
+    },
+    {
+      "name" : "ethernet_t",
+      "id" : 4,
+      "fields" : [
+        ["dstAddr", 48, false],
+        ["srcAddr", 48, false],
+        ["etherType", 16, false]
+      ]
+    },
+    {
+      "name" : "ipv4_t",
+      "id" : 5,
+      "fields" : [
+        ["version", 4, false],
+        ["ihl", 4, false],
+        ["diffserv", 8, false],
+        ["packet_length", 16, false],
+        ["identification", 16, false],
+        ["flags", 3, false],
+        ["fragOffset", 13, false],
+        ["ttl", 8, false],
+        ["protocol", 8, false],
+        ["hdrChecksum", 16, false],
+        ["srcAddr", 32, false],
+        ["dstAddr", 32, false]
+      ]
+    },
+    {
+      "name" : "tcp_t",
+      "id" : 6,
+      "fields" : [
+        ["srcport", 16, false],
+        ["dstport", 16, false],
+        ["seqNo", 32, false],
+        ["ackNo", 32, false],
+        ["dataOffset", 4, false],
+        ["res", 4, false],
+        ["flags", 8, false],
+        ["window", 16, false],
+        ["checksum", 16, false],
+        ["urgentPtr", 16, false]
+      ]
+    },
+    {
+      "name" : "udp_t",
+      "id" : 7,
+      "fields" : [
+        ["srcPort", 16, false],
+        ["dstPort", 16, false],
+        ["length_", 16, false],
+        ["checksum", 16, false]
+      ]
+    }
+  ],
+  "headers" : [
+    {
+      "name" : "inKey_0",
+      "id" : 0,
+      "header_type" : "Key_result",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "evictedKey_result_0",
+      "id" : 1,
+      "header_type" : "Key_result",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "evictedValue_result_0",
+      "id" : 2,
+      "header_type" : "Value_result",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "scalars",
+      "id" : 3,
+      "header_type" : "scalars_0",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 4,
+      "header_type" : "standard_metadata",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ethernet",
+      "id" : 5,
+      "header_type" : "ethernet_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ip",
+      "id" : 6,
+      "header_type" : "ipv4_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "tcp",
+      "id" : 7,
+      "header_type" : "tcp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "udp",
+      "id" : 8,
+      "header_type" : "udp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    }
+  ],
+  "header_stacks" : [],
+  "header_union_types" : [],
+  "header_unions" : [],
+  "header_union_stacks" : [],
+  "field_lists" : [],
+  "errors" : [
+    ["NoError", 1],
+    ["PacketTooShort", 2],
+    ["NoMatch", 3],
+    ["StackOutOfBounds", 4],
+    ["HeaderTooShort", 5],
+    ["ParserTimeout", 6],
+    ["ParserInvalidArgument", 7]
+  ],
+  "enums" : [],
+  "parsers" : [
+    {
+      "name" : "parser",
+      "id" : 0,
+      "init_state" : "start",
+      "parse_states" : [
+        {
+          "name" : "start",
+          "id" : 0,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ethernet"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0800",
+              "mask" : null,
+              "next_state" : "parse_ipv4"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "etherType"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_ipv4",
+          "id" : 1,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ip"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x00000506",
+              "mask" : "0x00000fff",
+              "next_state" : "parse_tcp"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000511",
+              "mask" : "0x00000fff",
+              "next_state" : "parse_udp"
+            },
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["ip", "fragOffset"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ip", "ihl"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ip", "protocol"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_tcp",
+          "id" : 2,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "tcp"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        },
+        {
+          "name" : "parse_udp",
+          "id" : 3,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "udp"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        }
+      ]
+    }
+  ],
+  "parse_vsets" : [],
+  "deparsers" : [
+    {
+      "name" : "deparser",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "queue_depth.p4",
+        "line" : 417,
+        "column" : 8,
+        "source_fragment" : "DP"
+      },
+      "order" : ["ethernet", "ip", "tcp", "udp"]
+    }
+  ],
+  "meter_arrays" : [],
+  "counter_arrays" : [],
+  "register_arrays" : [
+    {
+      "name" : "Eg.regK_result_f0",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "queue_depth.p4",
+        "line" : 275,
+        "column" : 31,
+        "source_fragment" : "regK_result_f0"
+      },
+      "size" : 2048,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "Eg.regK_result_f1",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "queue_depth.p4",
+        "line" : 276,
+        "column" : 31,
+        "source_fragment" : "regK_result_f1"
+      },
+      "size" : 2048,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "Eg.regK_result_f2",
+      "id" : 2,
+      "source_info" : {
+        "filename" : "queue_depth.p4",
+        "line" : 277,
+        "column" : 31,
+        "source_fragment" : "regK_result_f2"
+      },
+      "size" : 2048,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "Eg.regK_result_f3",
+      "id" : 3,
+      "source_info" : {
+        "filename" : "queue_depth.p4",
+        "line" : 278,
+        "column" : 31,
+        "source_fragment" : "regK_result_f3"
+      },
+      "size" : 2048,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "Eg.regK_result_f4",
+      "id" : 4,
+      "source_info" : {
+        "filename" : "queue_depth.p4",
+        "line" : 279,
+        "column" : 31,
+        "source_fragment" : "regK_result_f4"
+      },
+      "size" : 2048,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "Eg.regV_result_f0",
+      "id" : 5,
+      "source_info" : {
+        "filename" : "queue_depth.p4",
+        "line" : 283,
+        "column" : 31,
+        "source_fragment" : "regV_result_f0"
+      },
+      "size" : 2048,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "Eg.times",
+      "id" : 6,
+      "source_info" : {
+        "filename" : "queue_depth.p4",
+        "line" : 284,
+        "column" : 31,
+        "source_fragment" : "times"
+      },
+      "size" : 2048,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "Eg.idx",
+      "id" : 7,
+      "source_info" : {
+        "filename" : "queue_depth.p4",
+        "line" : 285,
+        "column" : 25,
+        "source_fragment" : "idx"
+      },
+      "size" : 1,
+      "bitwidth" : 32
+    }
+  ],
+  "calculations" : [
+    {
+      "name" : "calc",
+      "id" : 0,
+      "algo" : "crc32",
+      "input" : [
+        {
+          "type" : "field",
+          "value" : ["inKey_0", "f0"]
+        },
+        {
+          "type" : "field",
+          "value" : ["inKey_0", "f1"]
+        },
+        {
+          "type" : "field",
+          "value" : ["inKey_0", "f2"]
+        },
+        {
+          "type" : "field",
+          "value" : ["inKey_0", "f3"]
+        },
+        {
+          "type" : "field",
+          "value" : ["inKey_0", "f4"]
+        }
+      ]
+    }
+  ],
+  "learn_lists" : [],
+  "actions" : [
+    {
+      "name" : "Ing.Drop_action",
+      "id" : 0,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "drop"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 174,
+            "column" : 8,
+            "source_fragment" : "standard_meta.drop = 1w1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "Ing.Drop_action",
+      "id" : 1,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "drop"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 174,
+            "column" : 8,
+            "source_fragment" : "standard_meta.drop = 1w1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "Ing.Drop_action",
+      "id" : 2,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "drop"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 174,
+            "column" : 8,
+            "source_fragment" : "standard_meta.drop = 1w1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "Ing.Set_nhop",
+      "id" : 3,
+      "runtime_data" : [
+        {
+          "name" : "ipv4_dest",
+          "bitwidth" : 32
+        },
+        {
+          "name" : "outPort",
+          "bitwidth" : 9
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 1
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 186,
+            "column" : 8,
+            "source_fragment" : "standard_meta.egress_spec = outPort"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "nextHop_0"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 185,
+            "column" : 18,
+            "source_fragment" : "ipv4_dest; ..."
+          }
+        }
+      ]
+    },
+    {
+      "name" : "Ing.Set_dmac",
+      "id" : 4,
+      "runtime_data" : [
+        {
+          "name" : "dmac",
+          "bitwidth" : 48
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 217,
+            "column" : 8,
+            "source_fragment" : "headers.ethernet.dstAddr = dmac"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "Ing.Set_smac",
+      "id" : 5,
+      "runtime_data" : [
+        {
+          "name" : "smac",
+          "bitwidth" : 48
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "srcAddr"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 240,
+            "column" : 9,
+            "source_fragment" : "headers.ethernet.srcAddr = smac"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "Eg.result",
+      "id" : 6,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["inKey_0", "f0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ip", "srcAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 293,
+            "column" : 8,
+            "source_fragment" : "inKey.f0 = hdrs.ip.srcAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["inKey_0", "f1"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ip", "dstAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 294,
+            "column" : 8,
+            "source_fragment" : "inKey.f1 = hdrs.ip.dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["inKey_0", "f2"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "Metadata._common_meta_srcport6"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 295,
+            "column" : 8,
+            "source_fragment" : "inKey.f2 = meta"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["inKey_0", "f3"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "Metadata._common_meta_dstport7"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 296,
+            "column" : 8,
+            "source_fragment" : "inKey.f3 = meta"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["inKey_0", "f4"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["ip", "protocol"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 297,
+            "column" : 8,
+            "source_fragment" : "inKey.f4 = (bit<32>)hdrs.ip.protocol"
+          }
+        },
+        {
+          "op" : "modify_field_with_hash_based_offset",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "hash_table_index_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            },
+            {
+              "type" : "calculation",
+              "value" : "calc"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000400"
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 313,
+            "column" : 8,
+            "source_fragment" : "hash(hash_table_index, HashAlgorithm.crc32, 32w0, inKey, 32w1024)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "existingKey_f0_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "Eg.regK_result_f0"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "hash_table_index_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 316,
+            "column" : 8,
+            "source_fragment" : "regK_result_f0.read(existingKey_f0, hash_table_index)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "existingKey_f1_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "Eg.regK_result_f1"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "hash_table_index_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 317,
+            "column" : 8,
+            "source_fragment" : "regK_result_f1.read(existingKey_f1, hash_table_index)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "existingKey_f2_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "Eg.regK_result_f2"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "hash_table_index_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 318,
+            "column" : 8,
+            "source_fragment" : "regK_result_f2.read(existingKey_f2, hash_table_index)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "existingKey_f3_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "Eg.regK_result_f3"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "hash_table_index_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 319,
+            "column" : 8,
+            "source_fragment" : "regK_result_f3.read(existingKey_f3, hash_table_index)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "existingKey_f4_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "Eg.regK_result_f4"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "hash_table_index_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 320,
+            "column" : 8,
+            "source_fragment" : "regK_result_f4.read(existingKey_f4, hash_table_index)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "existingValue_f0_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "Eg.regV_result_f0"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "hash_table_index_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 322,
+            "column" : 8,
+            "source_fragment" : "regV_result_f0.read(existingValue_f0, hash_table_index)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "bool",
+                        "value" : true
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "existingKey_f0_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00000000"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 327,
+            "column" : 25,
+            "source_fragment" : "(existingKey_f0 == 0) ? no_key_present : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "bool",
+                        "value" : false
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "not",
+                          "left" : null,
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "==",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "existingKey_f0_0"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x00000000"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 327,
+            "column" : 25,
+            "source_fragment" : "(existingKey_f0 == 0) ? no_key_present : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp"]
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_0"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "existingKey_f1_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00000000"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 328,
+            "column" : 25,
+            "source_fragment" : "(existingKey_f1 == 0) ? no_key_present : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "bool",
+                        "value" : false
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_0"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "not",
+                          "left" : null,
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "==",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "existingKey_f1_0"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x00000000"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 328,
+            "column" : 25,
+            "source_fragment" : "(existingKey_f1 == 0) ? no_key_present : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_1"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_0"]
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_1"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "existingKey_f2_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00000000"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 329,
+            "column" : 25,
+            "source_fragment" : "(existingKey_f2 == 0) ? no_key_present : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_1"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "bool",
+                        "value" : false
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_1"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "not",
+                          "left" : null,
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "==",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "existingKey_f2_0"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x00000000"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 329,
+            "column" : 25,
+            "source_fragment" : "(existingKey_f2 == 0) ? no_key_present : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_2"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_1"]
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_2"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "existingKey_f3_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00000000"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 330,
+            "column" : 25,
+            "source_fragment" : "(existingKey_f3 == 0) ? no_key_present : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_2"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "bool",
+                        "value" : false
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_2"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "not",
+                          "left" : null,
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "==",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "existingKey_f3_0"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x00000000"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 330,
+            "column" : 25,
+            "source_fragment" : "(existingKey_f3 == 0) ? no_key_present : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_2"]
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_3"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "existingKey_f4_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00000000"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 331,
+            "column" : 25,
+            "source_fragment" : "(existingKey_f4 == 0) ? no_key_present : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "bool",
+                        "value" : false
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_3"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "not",
+                          "left" : null,
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "==",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "existingKey_f4_0"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x00000000"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 331,
+            "column" : 25,
+            "source_fragment" : "(existingKey_f4 == 0) ? no_key_present : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "bool",
+                        "value" : true
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_4"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "existingKey_f0_0"]
+                          },
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["ip", "srcAddr"]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 336,
+            "column" : 22,
+            "source_fragment" : "(existingKey_f0 == inKey.f0) ? key_matches : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "bool",
+                        "value" : false
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_4"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "not",
+                          "left" : null,
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "==",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "existingKey_f0_0"]
+                              },
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["ip", "srcAddr"]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 336,
+            "column" : 22,
+            "source_fragment" : "(existingKey_f0 == inKey.f0) ? key_matches : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_5"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_4"]
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_5"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "existingKey_f1_0"]
+                          },
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["ip", "dstAddr"]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 337,
+            "column" : 22,
+            "source_fragment" : "(existingKey_f1 == inKey.f1) ? key_matches : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_5"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "bool",
+                        "value" : false
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_5"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "not",
+                          "left" : null,
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "==",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "existingKey_f1_0"]
+                              },
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["ip", "dstAddr"]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 337,
+            "column" : 22,
+            "source_fragment" : "(existingKey_f1 == inKey.f1) ? key_matches : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_6"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_5"]
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_6"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "existingKey_f2_0"]
+                          },
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "Metadata._common_meta_srcport6"]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 338,
+            "column" : 22,
+            "source_fragment" : "(existingKey_f2 == inKey.f2) ? key_matches : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_6"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "bool",
+                        "value" : false
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_6"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "not",
+                          "left" : null,
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "==",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "existingKey_f2_0"]
+                              },
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "Metadata._common_meta_srcport6"]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 338,
+            "column" : 22,
+            "source_fragment" : "(existingKey_f2 == inKey.f2) ? key_matches : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_7"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_6"]
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_7"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "existingKey_f3_0"]
+                          },
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "Metadata._common_meta_dstport7"]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 339,
+            "column" : 22,
+            "source_fragment" : "(existingKey_f3 == inKey.f3) ? key_matches : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_7"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "bool",
+                        "value" : false
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_7"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "not",
+                          "left" : null,
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "==",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "existingKey_f3_0"]
+                              },
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "Metadata._common_meta_dstport7"]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 339,
+            "column" : 22,
+            "source_fragment" : "(existingKey_f3 == inKey.f3) ? key_matches : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_8"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_7"]
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_8"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "existingKey_f4_0"]
+                          },
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "&",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["ip", "protocol"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0xffffffff"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 340,
+            "column" : 22,
+            "source_fragment" : "(existingKey_f4 == inKey.f4) ? key_matches : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_8"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "?",
+                      "left" : {
+                        "type" : "bool",
+                        "value" : false
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_8"]
+                          }
+                        }
+                      },
+                      "cond" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "not",
+                          "left" : null,
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "==",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "existingKey_f4_0"]
+                              },
+                              "right" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "&",
+                                  "left" : {
+                                    "type" : "field",
+                                    "value" : ["ip", "protocol"]
+                                  },
+                                  "right" : {
+                                    "type" : "hexstr",
+                                    "value" : "0xffffffff"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 340,
+            "column" : 22,
+            "source_fragment" : "(existingKey_f4 == inKey.f4) ? key_matches : false"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_9"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "existingKey_f0_0"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp_9"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "or",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "d2b",
+                              "left" : null,
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "tmp_8"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "d2b",
+                              "left" : null,
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "tmp_3"]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 345,
+            "column" : 24,
+            "source_fragment" : "!ok ? existingKey_f0 : 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_9"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0x00000000"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp_9"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "not",
+                          "left" : null,
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "or",
+                              "left" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "d2b",
+                                  "left" : null,
+                                  "right" : {
+                                    "type" : "field",
+                                    "value" : ["scalars", "tmp_8"]
+                                  }
+                                }
+                              },
+                              "right" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "d2b",
+                                  "left" : null,
+                                  "right" : {
+                                    "type" : "field",
+                                    "value" : ["scalars", "tmp_3"]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 345,
+            "column" : 24,
+            "source_fragment" : "!ok ? existingKey_f0 : 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_10"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "existingKey_f1_0"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp_10"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "or",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "d2b",
+                              "left" : null,
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "tmp_8"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "d2b",
+                              "left" : null,
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "tmp_3"]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 346,
+            "column" : 24,
+            "source_fragment" : "!ok ? existingKey_f1 : 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_10"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0x00000000"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp_10"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "not",
+                          "left" : null,
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "or",
+                              "left" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "d2b",
+                                  "left" : null,
+                                  "right" : {
+                                    "type" : "field",
+                                    "value" : ["scalars", "tmp_8"]
+                                  }
+                                }
+                              },
+                              "right" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "d2b",
+                                  "left" : null,
+                                  "right" : {
+                                    "type" : "field",
+                                    "value" : ["scalars", "tmp_3"]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 346,
+            "column" : 24,
+            "source_fragment" : "!ok ? existingKey_f1 : 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_11"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "existingKey_f2_0"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp_11"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "or",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "d2b",
+                              "left" : null,
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "tmp_8"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "d2b",
+                              "left" : null,
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "tmp_3"]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 347,
+            "column" : 24,
+            "source_fragment" : "!ok ? existingKey_f2 : 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_11"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0x00000000"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp_11"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "not",
+                          "left" : null,
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "or",
+                              "left" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "d2b",
+                                  "left" : null,
+                                  "right" : {
+                                    "type" : "field",
+                                    "value" : ["scalars", "tmp_8"]
+                                  }
+                                }
+                              },
+                              "right" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "d2b",
+                                  "left" : null,
+                                  "right" : {
+                                    "type" : "field",
+                                    "value" : ["scalars", "tmp_3"]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 347,
+            "column" : 24,
+            "source_fragment" : "!ok ? existingKey_f2 : 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_12"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "existingKey_f3_0"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp_12"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "or",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "d2b",
+                              "left" : null,
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "tmp_8"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "d2b",
+                              "left" : null,
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "tmp_3"]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 348,
+            "column" : 24,
+            "source_fragment" : "!ok ? existingKey_f3 : 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_12"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0x00000000"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp_12"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "not",
+                          "left" : null,
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "or",
+                              "left" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "d2b",
+                                  "left" : null,
+                                  "right" : {
+                                    "type" : "field",
+                                    "value" : ["scalars", "tmp_8"]
+                                  }
+                                }
+                              },
+                              "right" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "d2b",
+                                  "left" : null,
+                                  "right" : {
+                                    "type" : "field",
+                                    "value" : ["scalars", "tmp_3"]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 348,
+            "column" : 24,
+            "source_fragment" : "!ok ? existingKey_f3 : 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_13"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "existingKey_f4_0"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp_13"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "or",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "d2b",
+                              "left" : null,
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "tmp_8"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "d2b",
+                              "left" : null,
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "tmp_3"]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 349,
+            "column" : 24,
+            "source_fragment" : "!ok ? existingKey_f4 : 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_13"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0x00000000"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp_13"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "not",
+                          "left" : null,
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "or",
+                              "left" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "d2b",
+                                  "left" : null,
+                                  "right" : {
+                                    "type" : "field",
+                                    "value" : ["scalars", "tmp_8"]
+                                  }
+                                }
+                              },
+                              "right" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "d2b",
+                                  "left" : null,
+                                  "right" : {
+                                    "type" : "field",
+                                    "value" : ["scalars", "tmp_3"]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 349,
+            "column" : 24,
+            "source_fragment" : "!ok ? existingKey_f4 : 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_14"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "existingValue_f0_0"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp_14"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "or",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "d2b",
+                              "left" : null,
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "tmp_8"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "d2b",
+                              "left" : null,
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "tmp_3"]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 351,
+            "column" : 26,
+            "source_fragment" : "!ok ? existingValue_f0 : 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_14"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0x00000000"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp_14"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "not",
+                          "left" : null,
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "or",
+                              "left" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "d2b",
+                                  "left" : null,
+                                  "right" : {
+                                    "type" : "field",
+                                    "value" : ["scalars", "tmp_8"]
+                                  }
+                                }
+                              },
+                              "right" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "d2b",
+                                  "left" : null,
+                                  "right" : {
+                                    "type" : "field",
+                                    "value" : ["scalars", "tmp_3"]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 351,
+            "column" : 26,
+            "source_fragment" : "!ok ? existingValue_f0 : 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_15"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "existingValue_f0_0"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp_15"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "or",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_8"]
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "d2b",
+                          "left" : null,
+                          "right" : {
+                            "type" : "field",
+                            "value" : ["scalars", "tmp_3"]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 355,
+            "column" : 31,
+            "source_fragment" : "ok ? existingValue_f0 : 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_15"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0x00000000"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp_15"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "or",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "d2b",
+                              "left" : null,
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "tmp_8"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "d2b",
+                              "left" : null,
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "tmp_3"]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 355,
+            "column" : 31,
+            "source_fragment" : "ok ? existingValue_f0 : 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_16"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_16"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 374,
+            "column" : 40,
+            "source_fragment" : "_tmp_result_valid ? (1w1) : (1w0)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_16"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00"
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 374,
+            "column" : 40,
+            "source_fragment" : "_tmp_result_valid ? (1w1) : (1w0)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "Metadata._query_meta__result_valid1"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_16"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 374,
+            "column" : 8,
+            "source_fragment" : "meta.query_meta._result_valid ="
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "ix_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "Eg.idx"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 378,
+            "column" : 8,
+            "source_fragment" : "idx.read(ix, 0)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_21"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "*",
+                              "left" : {
+                                "type" : "hexstr",
+                                "value" : "0x00000001"
+                              },
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "ix_0"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 380,
+            "column" : 26,
+            "source_fragment" : "(delta * ix) + delta"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_22"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "enq_qdepth"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 381,
+            "column" : 38,
+            "source_fragment" : "(bit<32>)standard_meta.enq_qdepth"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "Eg.regV_result_f0"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_21"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_22"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 381,
+            "column" : 8,
+            "source_fragment" : "regV_result_f0.write(writeix, (bit<32>)standard_meta.enq_qdepth)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_23"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "*",
+                              "left" : {
+                                "type" : "hexstr",
+                                "value" : "0x00000001"
+                              },
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "ix_0"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 380,
+            "column" : 26,
+            "source_fragment" : "(delta * ix) + delta"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "Eg.times"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_23"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "enq_timestamp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 382,
+            "column" : 8,
+            "source_fragment" : "times.write(writeix, (bit<32>)standard_meta.enq_timestamp)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_17"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0x00000000"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp_17"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "+",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "ix_0"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x00000001"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x000007ff"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 384,
+            "column" : 17,
+            "source_fragment" : "(nextid == 32w2047) ? 0 : nextid"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_17"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "+",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "ix_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00000001"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffffffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp_17"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "&",
+                              "left" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : "+",
+                                  "left" : {
+                                    "type" : "field",
+                                    "value" : ["scalars", "ix_0"]
+                                  },
+                                  "right" : {
+                                    "type" : "hexstr",
+                                    "value" : "0x00000001"
+                                  }
+                                }
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0xffffffff"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x000007ff"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 384,
+            "column" : 17,
+            "source_fragment" : "(nextid == 32w2047) ? 0 : nextid"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_24"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "*",
+                              "left" : {
+                                "type" : "hexstr",
+                                "value" : "0x00000001"
+                              },
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "ix_0"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 380,
+            "column" : 26,
+            "source_fragment" : "(delta * ix) + delta"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "Eg.regK_result_f0"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_24"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ip", "srcAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 386,
+            "column" : 8,
+            "source_fragment" : "regK_result_f0.write(writeix, inKey.f0)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_25"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "*",
+                              "left" : {
+                                "type" : "hexstr",
+                                "value" : "0x00000001"
+                              },
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "ix_0"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 380,
+            "column" : 26,
+            "source_fragment" : "(delta * ix) + delta"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "Eg.regK_result_f1"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_25"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ip", "dstAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 387,
+            "column" : 8,
+            "source_fragment" : "regK_result_f1.write(writeix, inKey.f1)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_26"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "*",
+                              "left" : {
+                                "type" : "hexstr",
+                                "value" : "0x00000001"
+                              },
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "ix_0"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 380,
+            "column" : 26,
+            "source_fragment" : "(delta * ix) + delta"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "Eg.regK_result_f2"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_26"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "Metadata._common_meta_srcport6"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 388,
+            "column" : 8,
+            "source_fragment" : "regK_result_f2.write(writeix, inKey.f2)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_27"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "*",
+                              "left" : {
+                                "type" : "hexstr",
+                                "value" : "0x00000001"
+                              },
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "ix_0"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 380,
+            "column" : 26,
+            "source_fragment" : "(delta * ix) + delta"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "Eg.regK_result_f3"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_27"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "Metadata._common_meta_dstport7"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 389,
+            "column" : 8,
+            "source_fragment" : "regK_result_f3.write(writeix, inKey.f3)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_28"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "*",
+                              "left" : {
+                                "type" : "hexstr",
+                                "value" : "0x00000001"
+                              },
+                              "right" : {
+                                "type" : "field",
+                                "value" : ["scalars", "ix_0"]
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 380,
+            "column" : 26,
+            "source_fragment" : "(delta * ix) + delta"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_29"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["ip", "protocol"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 297,
+            "column" : 19,
+            "source_fragment" : "(bit<32>)hdrs.ip.protocol"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "Eg.regK_result_f4"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_28"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_29"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 390,
+            "column" : 8,
+            "source_fragment" : "regK_result_f4.write(writeix, inKey.f4)"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "Eg.idx"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_17"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 391,
+            "column" : 8,
+            "source_fragment" : "idx.write(0, nextid)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["evictedKey_result_0", "f0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_9"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 410,
+            "column" : 15,
+            "source_fragment" : "evictedKey_result"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["evictedKey_result_0", "f1"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_10"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 410,
+            "column" : 15,
+            "source_fragment" : "evictedKey_result"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["evictedKey_result_0", "f2"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_11"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 410,
+            "column" : 15,
+            "source_fragment" : "evictedKey_result"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["evictedKey_result_0", "f3"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_12"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 410,
+            "column" : 15,
+            "source_fragment" : "evictedKey_result"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["evictedKey_result_0", "f4"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_13"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 410,
+            "column" : 15,
+            "source_fragment" : "evictedKey_result"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["evictedValue_result_0", "f0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_14"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 410,
+            "column" : 33,
+            "source_fragment" : "evictedValue_result"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "act",
+      "id" : 7,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_18"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "-",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["ip", "packet_length"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["tcp", "dataOffset"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 401,
+            "column" : 42,
+            "source_fragment" : "hdrs.tcp.isValid() ? (bit<32>)hdrs.ip.packet_length - (bit<32>)hdrs.tcp.dataOffset : (bit<32>)hdrs.udp.length_"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "act_0",
+      "id" : 8,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_18"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["udp", "length_"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 401,
+            "column" : 42,
+            "source_fragment" : "hdrs.tcp.isValid() ? (bit<32>)hdrs.ip.packet_length - (bit<32>)hdrs.tcp.dataOffset : (bit<32>)hdrs.udp.length_"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "act_1",
+      "id" : 9,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "Metadata._common_meta_switchId2"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000029a"
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 400,
+            "column" : 8,
+            "source_fragment" : "meta.common_meta.switchId = 666"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "act_2",
+      "id" : 10,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_19"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["tcp", "srcport"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 404,
+            "column" : 35,
+            "source_fragment" : "(hdrs.tcp.srcport != 0) ? (bit<32>)hdrs.tcp.srcport : (bit<32>)hdrs.udp.srcPort"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "act_3",
+      "id" : 11,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_19"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["udp", "srcPort"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 404,
+            "column" : 35,
+            "source_fragment" : "(hdrs.tcp.srcport != 0) ? (bit<32>)hdrs.tcp.srcport : (bit<32>)hdrs.udp.srcPort"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "act_4",
+      "id" : 12,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "Metadata._common_meta_payload_length3"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_18"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 401,
+            "column" : 8,
+            "source_fragment" : "meta.common_meta.payload_length ="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "Metadata._common_meta_egress_timestamp4"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "&",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "Metadata._queueing_metadata_enq_timestamp14"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0xffffffff"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "Metadata._queueing_metadata_deq_timedelta16"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 402,
+            "column" : 8,
+            "source_fragment" : "meta.common_meta.egress_timestamp = meta.queueing_metadata.enq_timestamp[31:0] + (bit<32>)meta.queueing_metadata.deq_timedelta"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "Metadata._common_meta_pktpath5"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 403,
+            "column" : 8,
+            "source_fragment" : "meta.common_meta.pktpath = 0"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "act_5",
+      "id" : 13,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_20"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["tcp", "dstport"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 405,
+            "column" : 35,
+            "source_fragment" : "(hdrs.tcp.srcport != 0) ? (bit<32>)hdrs.tcp.dstport : (bit<32>)hdrs.udp.dstPort"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "act_6",
+      "id" : 14,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_20"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["udp", "dstPort"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 405,
+            "column" : 35,
+            "source_fragment" : "(hdrs.tcp.srcport != 0) ? (bit<32>)hdrs.tcp.dstport : (bit<32>)hdrs.udp.dstPort"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "act_7",
+      "id" : 15,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "Metadata._common_meta_srcport6"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_19"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 404,
+            "column" : 8,
+            "source_fragment" : "meta.common_meta.srcport ="
+          }
+        }
+      ]
+    },
+    {
+      "name" : "act_8",
+      "id" : 16,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "Metadata._common_meta_dstport7"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_20"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 405,
+            "column" : 8,
+            "source_fragment" : "meta.common_meta.dstport ="
+          }
+        }
+      ]
+    }
+  ],
+  "pipelines" : [
+    {
+      "name" : "ingress",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "queue_depth.p4",
+        "line" : 165,
+        "column" : 8,
+        "source_fragment" : "Ing"
+      },
+      "init_table" : "Ing.ipv4_match",
+      "tables" : [
+        {
+          "name" : "Ing.ipv4_match",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 195,
+            "column" : 10,
+            "source_fragment" : "ipv4_match"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "headers.ip.dstAddr",
+              "target" : ["ip", "dstAddr"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [0, 3],
+          "actions" : ["Ing.Drop_action", "Ing.Set_nhop"],
+          "base_default_next" : "Ing.dmac",
+          "next_tables" : {
+            "Ing.Drop_action" : "Ing.dmac",
+            "Ing.Set_nhop" : "Ing.dmac"
+          },
+          "default_entry" : {
+            "action_id" : 0,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "Ing.dmac",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 225,
+            "column" : 10,
+            "source_fragment" : "dmac"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "nextHop",
+              "target" : ["scalars", "nextHop_0"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [1, 4],
+          "actions" : ["Ing.Drop_action", "Ing.Set_dmac"],
+          "base_default_next" : "Ing.smac",
+          "next_tables" : {
+            "Ing.Drop_action" : "Ing.smac",
+            "Ing.Set_dmac" : "Ing.smac"
+          },
+          "default_entry" : {
+            "action_id" : 1,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "Ing.smac",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 245,
+            "column" : 12,
+            "source_fragment" : "smac"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "standard_meta.egress_port",
+              "target" : ["standard_metadata", "egress_port"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 16,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [2, 5],
+          "actions" : ["Ing.Drop_action", "Ing.Set_smac"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "Ing.Drop_action" : null,
+            "Ing.Set_smac" : null
+          },
+          "default_entry" : {
+            "action_id" : 2,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : []
+    },
+    {
+      "name" : "egress",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "queue_depth.p4",
+        "line" : 263,
+        "column" : 8,
+        "source_fragment" : "Eg"
+      },
+      "init_table" : "tbl_act",
+      "tables" : [
+        {
+          "name" : "tbl_act",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 400,
+            "column" : 34,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [9],
+          "actions" : ["act_1"],
+          "base_default_next" : "node_8",
+          "next_tables" : {
+            "act_1" : "node_8"
+          },
+          "default_entry" : {
+            "action_id" : 9,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_act_0",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 401,
+            "column" : 42,
+            "source_fragment" : "hdrs.tcp.isValid() ? (bit<32>)hdrs.ip.packet_length - (bit<32>)hdrs.tcp.dataOffset : (bit<32>)hdrs.udp.length_"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [7],
+          "actions" : ["act"],
+          "base_default_next" : "tbl_act_2",
+          "next_tables" : {
+            "act" : "tbl_act_2"
+          },
+          "default_entry" : {
+            "action_id" : 7,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_act_1",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 401,
+            "column" : 42,
+            "source_fragment" : "hdrs.tcp.isValid() ? (bit<32>)hdrs.ip.packet_length - (bit<32>)hdrs.tcp.dataOffset : (bit<32>)hdrs.udp.length_"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [8],
+          "actions" : ["act_0"],
+          "base_default_next" : "tbl_act_2",
+          "next_tables" : {
+            "act_0" : "tbl_act_2"
+          },
+          "default_entry" : {
+            "action_id" : 8,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_act_2",
+          "id" : 6,
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 401,
+            "column" : 40,
+            "source_fragment" : "= hdrs.tcp.isValid() ? (bit<32>)hdrs.ip.packet_length - (bit<32>)hdrs.tcp.dataOffset : (bit<32>)hdrs.udp.length_; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [12],
+          "actions" : ["act_4"],
+          "base_default_next" : "node_12",
+          "next_tables" : {
+            "act_4" : "node_12"
+          },
+          "default_entry" : {
+            "action_id" : 12,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_act_3",
+          "id" : 7,
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 404,
+            "column" : 35,
+            "source_fragment" : "(hdrs.tcp.srcport != 0) ? (bit<32>)hdrs.tcp.srcport : (bit<32>)hdrs.udp.srcPort"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [10],
+          "actions" : ["act_2"],
+          "base_default_next" : "tbl_act_5",
+          "next_tables" : {
+            "act_2" : "tbl_act_5"
+          },
+          "default_entry" : {
+            "action_id" : 10,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_act_4",
+          "id" : 8,
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 404,
+            "column" : 35,
+            "source_fragment" : "(hdrs.tcp.srcport != 0) ? (bit<32>)hdrs.tcp.srcport : (bit<32>)hdrs.udp.srcPort"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [11],
+          "actions" : ["act_3"],
+          "base_default_next" : "tbl_act_5",
+          "next_tables" : {
+            "act_3" : "tbl_act_5"
+          },
+          "default_entry" : {
+            "action_id" : 11,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_act_5",
+          "id" : 9,
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 404,
+            "column" : 33,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [15],
+          "actions" : ["act_7"],
+          "base_default_next" : "node_16",
+          "next_tables" : {
+            "act_7" : "node_16"
+          },
+          "default_entry" : {
+            "action_id" : 15,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_act_6",
+          "id" : 10,
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 405,
+            "column" : 35,
+            "source_fragment" : "(hdrs.tcp.srcport != 0) ? (bit<32>)hdrs.tcp.dstport : (bit<32>)hdrs.udp.dstPort"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [13],
+          "actions" : ["act_5"],
+          "base_default_next" : "tbl_act_8",
+          "next_tables" : {
+            "act_5" : "tbl_act_8"
+          },
+          "default_entry" : {
+            "action_id" : 13,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_act_7",
+          "id" : 11,
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 405,
+            "column" : 35,
+            "source_fragment" : "(hdrs.tcp.srcport != 0) ? (bit<32>)hdrs.tcp.dstport : (bit<32>)hdrs.udp.dstPort"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [14],
+          "actions" : ["act_6"],
+          "base_default_next" : "tbl_act_8",
+          "next_tables" : {
+            "act_6" : "tbl_act_8"
+          },
+          "default_entry" : {
+            "action_id" : 14,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_act_8",
+          "id" : 12,
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 405,
+            "column" : 33,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [16],
+          "actions" : ["act_8"],
+          "base_default_next" : "tbl_result",
+          "next_tables" : {
+            "act_8" : "tbl_result"
+          },
+          "default_entry" : {
+            "action_id" : 16,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_result",
+          "id" : 13,
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 410,
+            "column" : 8,
+            "source_fragment" : "result(evictedKey_result,evictedValue_result)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [6],
+          "actions" : ["Eg.result"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "Eg.result" : null
+          },
+          "default_entry" : {
+            "action_id" : 6,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : [
+        {
+          "name" : "node_8",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 401,
+            "column" : 42,
+            "source_fragment" : "hdrs.tcp.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["tcp", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "tbl_act_0",
+          "false_next" : "tbl_act_1"
+        },
+        {
+          "name" : "node_12",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 404,
+            "column" : 36,
+            "source_fragment" : "hdrs.tcp.srcport != 0"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "!=",
+              "left" : {
+                "type" : "field",
+                "value" : ["tcp", "srcport"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x0000"
+              }
+            }
+          },
+          "true_next" : "tbl_act_3",
+          "false_next" : "tbl_act_4"
+        },
+        {
+          "name" : "node_16",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "queue_depth.p4",
+            "line" : 405,
+            "column" : 36,
+            "source_fragment" : "hdrs.tcp.srcport != 0"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "!=",
+              "left" : {
+                "type" : "field",
+                "value" : ["tcp", "srcport"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x0000"
+              }
+            }
+          },
+          "true_next" : "tbl_act_6",
+          "false_next" : "tbl_act_7"
+        }
+      ]
+    }
+  ],
+  "checksums" : [],
+  "force_arith" : [],
+  "extern_instances" : [],
+  "field_aliases" : [
+    [
+      "queueing_metadata.enq_timestamp",
+      ["standard_metadata", "enq_timestamp"]
+    ],
+    [
+      "queueing_metadata.enq_qdepth",
+      ["standard_metadata", "enq_qdepth"]
+    ],
+    [
+      "queueing_metadata.deq_timedelta",
+      ["standard_metadata", "deq_timedelta"]
+    ],
+    [
+      "queueing_metadata.deq_qdepth",
+      ["standard_metadata", "deq_qdepth"]
+    ],
+    [
+      "intrinsic_metadata.ingress_global_timestamp",
+      ["standard_metadata", "ingress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.egress_global_timestamp",
+      ["standard_metadata", "egress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.lf_field_list",
+      ["standard_metadata", "lf_field_list"]
+    ],
+    [
+      "intrinsic_metadata.mcast_grp",
+      ["standard_metadata", "mcast_grp"]
+    ],
+    [
+      "intrinsic_metadata.resubmit_flag",
+      ["standard_metadata", "resubmit_flag"]
+    ],
+    [
+      "intrinsic_metadata.egress_rid",
+      ["standard_metadata", "egress_rid"]
+    ],
+    [
+      "intrinsic_metadata.recirculate_flag",
+      ["standard_metadata", "recirculate_flag"]
+    ],
+    [
+      "intrinsic_metadata.priority",
+      ["standard_metadata", "priority"]
+    ]
+  ],
+  "program" : "./queue_depth.p4i",
+  "__meta__" : {
+    "version" : [2, 18],
+    "compiler" : "https://github.com/p4lang/p4c"
+  }
+}
